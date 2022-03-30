@@ -1,4 +1,4 @@
-import "@/styles/globals.sass"
+import "../styles/globals.sass"
 import { NextUIProvider } from "@nextui-org/react"
 import { Layout } from "../components"
 
