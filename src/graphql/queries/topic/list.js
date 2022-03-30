@@ -5,8 +5,9 @@ export const getTopics = gql`
     topic(name: $name) {
       name
       stargazerCount
-      relatedTopics {
+      relatedTopics (first: 10) {
         name
+        stargazerCount
       }    
     }
   }
