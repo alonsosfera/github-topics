@@ -1,14 +1,17 @@
 import Head from "next/head"
+import { withApollo } from "../hoc"
+import { Topics } from "../components"
 
-export default function Home() {
+function Home () {
   return (
-    <div>
+    <main>
       <Head>
         <title>GitHub Topics</title>
       </Head>
-      <main>
-        <h1>Home Page</h1>
-      </main>
-    </div>
+      <Topics />
+    </main>
   )
 }
+
+
+export default withApollo(Home)
