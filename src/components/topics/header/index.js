@@ -1,6 +1,6 @@
 import { useRef } from "react"
 import { Grid, Input } from "@nextui-org/react"
-import { debounce } from "lodash"
+import { debounce } from "../../../helpers"
 
 export const TopicsHeader = ({ currentTopic, onSearch, resetTopic }) => {
   const debouncedSearch = useRef(debounce(onSearch, 800)).current
