@@ -12,7 +12,6 @@
   "dependencies": {
     "@apollo/client": "^3.5.10",
     "@nextui-org/react": "^1.0.5-beta.5",
-    "axios": "^0.26.1",
     "graphql": "^16.3.0",
     "lodash": "^4.17.21",
     "next": "12.1.2",
