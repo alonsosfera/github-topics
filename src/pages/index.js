@@ -1,14 +1,37 @@
 import Head from "next/head"
+import { withApollo } from "../hoc"
+import { Topics } from "../components"
+import { useQuery } from "@apollo/client"
+import { queries } from "../graphql"
+import { useEffect, useState } from "react"
 
-export default function Home() {
+function Home () {
+  const [topic, setTopic] = useState("react")
+
+  const { data, loading, refetch } = useQuery(queries.topic.getTopics, {
+    variables: { name: topic }
+  })
+
+  useEffect(() => {
+    if (!topic || topic === "") {
+      refetch({ name: "react" }).then()
+    } else {
+      refetch({ name: topic }).then()
+    }
+  }, [refetch, topic])
+
   return (
-    <div>
+    <main>
       <Head>
         <title>GitHub Topics</title>
       </Head>
-      <main>
-        <h1>Home Page</h1>
-      </main>
-    </div>
+      <Topics
+        data={data}
+        loading={loading}
+        setTopic={setTopic}
+        currentTopic={topic} />
+    </main>
   )
 }
+
+export default withApollo(Home)

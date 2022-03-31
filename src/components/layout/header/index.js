@@ -2,7 +2,10 @@ import { Card, Grid } from "@nextui-org/react"
 
 export const Header = () => {
   return (
-    <Card className="navbar" color="gradient">
+    <Card
+      color="gradient"
+      className="navbar"
+      data-testid="navbar-header">
       <Grid.Container alignItems="center" justify="space-between">
         <Grid>
           <h4>GitHub Topics</h4>
