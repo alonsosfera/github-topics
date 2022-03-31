@@ -1,7 +1,10 @@
+import { useRef } from "react"
 import { Grid, Input } from "@nextui-org/react"
 import { debounce } from "lodash"
 
 export const TopicsHeader = ({ currentTopic, onSearch, resetTopic }) => {
+  const debouncedSearch = useRef(debounce(onSearch, 800)).current
+
   return (
     <>
       <Grid xs={12} md={10}>
@@ -23,7 +26,7 @@ export const TopicsHeader = ({ currentTopic, onSearch, resetTopic }) => {
           aria-label="Search"
           placeholder="Search"
           data-testid="search-input"
-          onChange={() => debounce(onSearch, 800)} />
+          onChange={debouncedSearch} />
       </Grid>
     </>
   )
