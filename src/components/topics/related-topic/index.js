@@ -7,7 +7,8 @@ export const RelatedTopic = ({ data, onClick }) => {
         bordered
         clickable
         shadow={false}
-        onClick={onClick}>
+        onClick={onClick}
+        data-testid="related-topic">
         <h4>{data?.name}</h4>
         <h4>Stargazers: {data?.stargazerCount}</h4>
       </Card>
