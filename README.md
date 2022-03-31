@@ -10,6 +10,13 @@ yarn dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
+### Running tests
+```bash
+npm run test
+# or
+yarn test
+```
+
 ## Learn More
 
 To learn more, take a look at the following resources:
@@ -18,7 +25,6 @@ To learn more, take a look at the following resources:
 - [NextUI](https://nextui.org/docs/guide/getting-started)
 - [SASS](https://sass-lang.com/)
 - [Apollo Client](https://www.apollographql.com/docs/react/)
-
 
 ## Deployment
 
