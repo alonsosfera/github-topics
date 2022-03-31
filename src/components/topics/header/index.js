@@ -5,7 +5,7 @@ export const TopicsHeader = ({ currentTopic, onSearch, resetTopic }) => {
   return (
     <>
       <Grid xs={12} md={10}>
-        <h3 className="reset-topic">
+        <h3 data-testid="topic-title" className="reset-topic">
           Current topic: {currentTopic}
           {currentTopic !== "react" ? (
             <>
@@ -22,7 +22,8 @@ export const TopicsHeader = ({ currentTopic, onSearch, resetTopic }) => {
           clearable
           aria-label="Search"
           placeholder="Search"
-          onChange={debounce(onSearch, 800)} />
+          data-testid="search-input"
+          onChange={() => debounce(onSearch, 800)} />
       </Grid>
     </>
   )
